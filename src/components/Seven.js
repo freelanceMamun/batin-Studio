@@ -17,6 +17,63 @@ const SevenSec = () => {
 
   const [gImg, setGimg] = useState(point);
 
+  // ================== Card Slide State -============
+  const [cardOne, setcardOne] = useState(false);
+  const [cardTwo, setcardTwo] = useState(false);
+  const [cardThree, setcardThree] = useState(false);
+  const [cardFour, setcardFour] = useState(true);
+
+  const cardFunOne = (value) => {
+    if (value === 0) {
+      setcardOne(true);
+    } else if (value === 1) {
+      setcardOne(false);
+    }
+  };
+  const cardFunTwo = (value) => {
+    if (value === 1) {
+      setcardTwo(true);
+    } else if (value === 2) {
+      setcardTwo(false);
+    }
+  };
+  const cardFunThree = (value) => {
+    setcardThree(true);
+    console.log(value);
+  };
+  const cardFunFour = (value) => {
+    setcardFour(true);
+    console.log(value);
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const eventsToTrigger = [
+    () => cardFunOne(currentIndex),
+    () => cardFunTwo(currentIndex),
+    () => cardFunThree(currentIndex),
+    () => cardFunFour(currentIndex),
+    // Add more events as needed
+  ];
+
+  const handlePrevClick = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      const currentEvent = eventsToTrigger[currentIndex - 1];
+      currentEvent();
+    }
+    return;
+  };
+
+  const handleNextClick = () => {
+    if (currentIndex < eventsToTrigger.length) {
+      const currentEvent = eventsToTrigger[currentIndex];
+      currentEvent();
+      setCurrentIndex(currentIndex + 1);
+    }
+    return;
+  };
+
   const firstLink = () => {
     setFlink(block);
     setSlink(dnone);
@@ -43,6 +100,15 @@ const SevenSec = () => {
     setFlink(dnone);
     setGlink(block);
   };
+
+  let myClsprev = {
+    marginLeft: '-700px',
+  };
+
+  let myclsPrest = {
+    marginLeft: '0px',
+  };
+
   return (
     <>
       <div className="mt-[150px] pbb py-[90px] ">
@@ -58,7 +124,7 @@ const SevenSec = () => {
 
         <div className="w-[85%] wonderWrapper mx-auto flex justify-between items-center gap-1">
           <div className="left_fourth relative h-[300px]  w-[50%]">
-            <div className="w-[95%] bg-white border-[1px] top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div className="w-[95%] bg-white border-[1px] top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto">
               <img
                 className="w-5 h-5"
                 src="images/vlogoicon1.png"
@@ -84,7 +150,10 @@ const SevenSec = () => {
               </p>
             </div>
 
-            <div className="w-[95%] bg-white border-[1px] top-2 left-2  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div
+              style={cardTwo ? myClsprev : myclsPrest}
+              className="w-[95%] duration-1000 transition-all bg-white border-[1px] top-2 left-2  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto "
+            >
               <img
                 className="w-5 h-4"
                 src="images/vlogoicon1.png"
@@ -97,7 +166,10 @@ const SevenSec = () => {
               </p>
             </div>
 
-            <div className="w-[95%]  border-[1px] top-3 bg-white left-3  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div
+              style={cardOne ? myClsprev : myclsPrest}
+              className="w-[95%]  duration-1000 transition-all border-[1px] top-3 bg-white left-3  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto "
+            >
               <img
                 className="w-6 h-6"
                 src="images/Notebook.png"
@@ -113,14 +185,19 @@ const SevenSec = () => {
             <div className="absolute -bottom-10 w-full flex justify-center items-center">
               <div className="w-[190px] mt-9 flex justify-between items-center">
                 <div className="learro">
-                  <button className="cursor-pointer w-[85px] p-5">
+                  <button
+                    onClick={handlePrevClick}
+                    className="cursor-pointer w-[85px] p-5"
+                  >
                     <img src="images/Arrow.png" alt="arrow" />
                   </button>
                 </div>
                 <span>1/4</span>
                 <div className="learro">
-                  <button className="cursor-pointor p-5 w-[85px]">
-                    {' '}
+                  <button
+                    onClick={handleNextClick}
+                    className="cursor-pointor p-5 w-[85px]"
+                  >
                     <img src="images/Arrow2.png" alt="arrow" />
                   </button>
                 </div>
