@@ -112,7 +112,7 @@ const SevenSec = () => {
     marginLeft: '-900px',
   };
   const mystyleprev = {
-    marginLeft: 'ml-9',
+    marginLeft: 'intail',
   };
 
   return (
