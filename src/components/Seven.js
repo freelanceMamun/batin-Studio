@@ -55,7 +55,6 @@ const SevenSec = () => {
     if (value === 2) {
       setCardThere(true);
     } else if (value === 3) {
-      console.log(value);
       setCardThere(false);
     }
   };
@@ -67,7 +66,6 @@ const SevenSec = () => {
       const currentEvent = eventsToTrigger[currentIndex - 1];
       currentEvent();
     }
-    console.log(currentIndex);
     return;
   };
 
@@ -112,12 +110,12 @@ const SevenSec = () => {
     marginLeft: '-900px',
   };
   const mystyleprev = {
-    marginLeft: 'intail',
+    marginLeft: '',
   };
 
   return (
     <>
-      <div className="mt-[150px] pbb py-[90px] ">
+      <div className="mt-[150px]  py-[90px] ">
         <p className="text-left font-sans mobile pl-5 text-[20px]  leading-[20px] font-[400] ">
           Work Process
         </p>
@@ -192,7 +190,7 @@ const SevenSec = () => {
             </div>
 
             <div className="absolute -bottom-10 w-full flex justify-center items-center">
-              <div className="w-[190px] mt-9 flex justify-between items-center">
+              <div className="w-[220px] mt-9 flex justify-between items-center">
                 <div className="learro">
                   <button
                     onClick={handlePrevClick}
@@ -201,7 +199,9 @@ const SevenSec = () => {
                     <img src="images/Arrow.png" alt="arrow" />
                   </button>
                 </div>
-                <span>1/4</span>
+                <p className="block">
+                  <span>{currentIndex + 1} /</span> <span> 4</span>
+                </p>
                 <div className="learro">
                   <button
                     onClick={handleNextClick}
