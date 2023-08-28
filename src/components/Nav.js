@@ -21,16 +21,16 @@ const Nav = () => {
         <div className="nav_right_content ">
           <ul className="p-0 flex justify-between  w-[600px] h-full items-center">
             <li className="desktop">
-              <Link to="/">Portfolio</Link>
+              <Link to="/portfolio">Portfolio</Link>
             </li>
             <li className="desktop">
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li className="desktop">
               <Link to="/">News</Link>
             </li>
             <li className="desktop">
-              <Link to="/">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             <li className="menuBtn   border-[2px] rounded-full py-2 px-4 ">
               <button className=" flex justify-between items-center">
@@ -65,16 +65,16 @@ const Nav = () => {
           <p className="py-6 text-center">Menu</p>
           <ul className="p-0 flex justify-between   w-[600px] h-full items-center">
             <li>
-              <Link to="/">Portfolio</Link>
+              <Link to="/portfolio">Portfolio</Link>
             </li>
             <li>
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/">News</Link>
+              <Link to="/news">News</Link>
             </li>
             <li>
-              <Link to="/">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
 

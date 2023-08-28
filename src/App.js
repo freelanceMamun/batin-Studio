@@ -7,6 +7,7 @@ import Portfolio from './Pages/Portfolio';
 import CaseStudy from './Pages/CaseStudy';
 import Contact from './Pages/Contact';
 import Meeting from './Pages/Meeting';
+import Article from './Pages/Article';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/schedule-meeting',
     element: <Meeting />,
+  },
+  {
+    path: '/article',
+    element: <Article />,
   },
 ]);
 
