@@ -19,7 +19,7 @@ const Nav = () => {
           </div>
         </Link>
         <div className="nav_right_content ">
-          <ul className="p-0 flex justify-between  w-[600px] h-full items-center">
+          <ul className="p-0 flex justify-between w-[600px] h-full items-center">
             <li className="desktop">
               <Link to="/portfolio">Portfolio</Link>
             </li>

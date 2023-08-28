@@ -17,6 +17,68 @@ const SevenSec = () => {
 
   const [gImg, setGimg] = useState(point);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [cardOne, setCardOne] = useState(false);
+  const [cardTwo, setCardTwo] = useState(false);
+  const [cardThree, setCardThere] = useState(false);
+  const [sliderCardFour, setCardFour] = useState(false);
+
+  const eventsToTrigger = [
+    () => sliderCardfunOne(currentIndex),
+    () => sliderCardfunTwo(currentIndex),
+    () => sliderCardfunThree(currentIndex),
+    () => sliderCardfunFour(currentIndex),
+    // Add more events as needed
+  ];
+
+  let sliderCardfunOne = (value) => {
+    console.log(value);
+    if (value === 0) {
+      setCardOne(true);
+    } else if (value === 1) {
+      console.log('Ello');
+      setCardOne(false);
+    }
+  };
+
+  let sliderCardfunTwo = (value) => {
+    if (value === 1) {
+      setCardTwo(true);
+    }
+
+    if (value === 2) {
+      setCardTwo(false);
+    }
+  };
+  let sliderCardfunThree = (value) => {
+    if (value === 2) {
+      setCardThere(true);
+    } else if (value === 3) {
+      setCardThere(false);
+    }
+  };
+  let sliderCardfunFour = () => {};
+
+  const handlePrevClick = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      const currentEvent = eventsToTrigger[currentIndex - 1];
+      currentEvent();
+    }
+    return;
+  };
+
+  const handleNextClick = () => {
+    if (currentIndex < eventsToTrigger.length) {
+      const currentEvent = eventsToTrigger[currentIndex];
+      currentEvent();
+      setCurrentIndex(currentIndex + 1);
+    }
+
+    return;
+  };
+
   const firstLink = () => {
     setFlink(block);
     setSlink(dnone);
@@ -43,9 +105,17 @@ const SevenSec = () => {
     setFlink(dnone);
     setGlink(block);
   };
+
+  const mystyle = {
+    marginLeft: '-900px',
+  };
+  const mystyleprev = {
+    marginLeft: '',
+  };
+
   return (
     <>
-      <div className="mt-[150px] pbb py-[90px] ">
+      <div className="mt-[150px]  py-[90px] ">
         <p className="text-left font-sans mobile pl-5 text-[20px]  leading-[20px] font-[400] ">
           Work Process
         </p>
@@ -56,9 +126,9 @@ const SevenSec = () => {
           Wondering, <br /> how we work?
         </h2>
 
-        <div className="w-[85%] wonderWrapper mx-auto flex justify-between items-center gap-1">
+        <div className="w-[90%] wonderWrapper mx-auto flex justify-between items-center gap-5">
           <div className="left_fourth relative h-[300px]  w-[50%]">
-            <div className="w-[95%] bg-white border-[1px] top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div className="w-[95%] bg-white border-[1px]  transition-all duration-500 top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto ">
               <img
                 className="w-5 h-5"
                 src="images/vlogoicon1.png"
@@ -71,7 +141,10 @@ const SevenSec = () => {
               </p>
             </div>
 
-            <div className="w-[95%] bg-white border-[1px] top-1 left-1  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div
+              style={cardThree ? mystyle : mystyleprev}
+              className="w-[95%] bg-white border-[1px] transition-all duration-1000 ml-3 mt-3  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+            >
               <img
                 className="w-5 h-4"
                 src="images/vlogoicon1.png"
@@ -84,7 +157,10 @@ const SevenSec = () => {
               </p>
             </div>
 
-            <div className="w-[95%] bg-white border-[1px] top-2 left-2  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div
+              style={cardTwo ? mystyle : mystyleprev}
+              className="w-[95%] bg-white border-[1px] transition-all duration-1000  mt-6 ml-6  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+            >
               <img
                 className="w-5 h-4"
                 src="images/vlogoicon1.png"
@@ -97,7 +173,10 @@ const SevenSec = () => {
               </p>
             </div>
 
-            <div className="w-[95%]  border-[1px] top-3 bg-white left-3  p-5 h-[248px] flex justify-center  flex-col rounded-lg  absolute mx-auto ">
+            <div
+              style={cardOne ? mystyle : mystyleprev}
+              className="w-[95%]  border-[1px] top-3 transition-all duration-1000 bg-white  ml-9 mt-6  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+            >
               <img
                 className="w-6 h-6"
                 src="images/Notebook.png"
@@ -111,24 +190,35 @@ const SevenSec = () => {
             </div>
 
             <div className="absolute -bottom-10 w-full flex justify-center items-center">
-              <div className="w-[190px] mt-9 flex justify-between items-center">
+              <div className="w-[220px] mt-9 flex justify-between items-center">
                 <div className="learro">
-                  <button className="cursor-pointer w-[85px] p-5">
+                  <button
+                    onClick={handlePrevClick}
+                    className="cursor-pointer w-[85px] p-5"
+                  >
                     <img src="images/Arrow.png" alt="arrow" />
                   </button>
                 </div>
-                <span>1/4</span>
+                <p className="block">
+                  <span>{currentIndex + 1} /</span> <span> 4</span>
+                </p>
                 <div className="learro">
-                  <button className="cursor-pointor p-5 w-[85px]">
-                    {' '}
-                    <img src="images/Arrow2.png" alt="arrow" />
+                  <button
+                    onClick={handleNextClick}
+                    className="cursor-pointor transition-all duration-300 p-5 w-[85px]"
+                  >
+                    <img
+                      src="images/Arrow2.png"
+                      className=" duration-300 transition-all"
+                      alt="arrow"
+                    />
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="right_fourth w-[50%]">
+          <div className="right_fourth w-[45%]">
             <h4 className="text-left font-sans desktop text-[16px]  leading-[20px] font-[400] ">
               Work Process
             </h4>
@@ -137,12 +227,12 @@ const SevenSec = () => {
             </h2>
 
             <ul className="list-none listing_link mt-[70px] cursor-pointer">
-              <li className="flex items-center   pb-5">
+              <li className="flex items-center  transition-all  duration-500  pb-5">
                 <img
                   style={{ display: fLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={firstLink}
@@ -152,12 +242,12 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  items-center pb-5">
+              <li className="flex  transition-all  duration-500 items-center pb-5">
                 <img
                   style={{ display: sLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px]  mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px]  transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={secondLink}
@@ -167,12 +257,12 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  items-center pb-5">
+              <li className="flex  transition-all  duration-500 items-center pb-5">
                 <img
                   style={{ display: tLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={thirdLink}
@@ -182,12 +272,12 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  items-center pb-5">
+              <li className="flex  transition-all  duration-500 items-center pb-5">
                 <img
                   style={{ display: gLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={fourthLink}
