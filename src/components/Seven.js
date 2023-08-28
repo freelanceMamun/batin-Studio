@@ -128,7 +128,7 @@ const SevenSec = () => {
 
         <div className="w-[90%] wonderWrapper mx-auto flex justify-between items-center gap-5">
           <div className="left_fourth relative h-[300px]  w-[50%]">
-            <div className="w-[95%] bg-white border-[1px]  transition-all duration-500 top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto ">
+            <div className="w-[95%] bg-white border-[1px]  transition-all duration-500 top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto ">
               <img
                 className="w-5 h-5"
                 src="images/vlogoicon1.png"
@@ -143,7 +143,7 @@ const SevenSec = () => {
 
             <div
               style={cardThree ? mystyle : mystyleprev}
-              className="w-[95%] bg-white border-[1px] transition-all duration-1000 ml-3 mt-3  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+              className="w-[95%] bg-white border-[1px] transition-all duration-1000 ml-3 mt-3  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
                 className="w-5 h-4"
@@ -159,7 +159,7 @@ const SevenSec = () => {
 
             <div
               style={cardTwo ? mystyle : mystyleprev}
-              className="w-[95%] bg-white border-[1px] transition-all duration-1000  mt-6 ml-6  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+              className="w-[95%] bg-white border-[1px] transition-all duration-1000  mt-6 ml-6  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
                 className="w-5 h-4"
@@ -175,7 +175,7 @@ const SevenSec = () => {
 
             <div
               style={cardOne ? mystyle : mystyleprev}
-              className="w-[95%]  border-[1px] top-3 transition-all duration-1000 bg-white  ml-9 mt-6  p-5 h-[248px] flex justify-center  flex-col rounded-xl  absolute mx-auto "
+              className="w-[95%]  border-[1px] top-3 transition-all duration-1000 bg-white  ml-9 mt-6  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
                 className="w-6 h-6"
