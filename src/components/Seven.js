@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const SevenSec = () => {
   const block = 'block';
   const dnone = 'none';
-  const point = '0%';
-  const pointOut = '-9999%';
+  const point = '';
+  const pointOut = '-900px';
 
   const [fLink, setFlink] = useState(block);
   const [sLink, setSlink] = useState(dnone);
@@ -25,48 +25,57 @@ const SevenSec = () => {
   const [sliderCardFour, setCardFour] = useState(false);
 
   const eventsToTrigger = [
-    () => sliderCardfunOne(currentIndex),
-    () => sliderCardfunTwo(currentIndex),
-    () => sliderCardfunThree(currentIndex),
-    () => sliderCardfunFour(currentIndex),
+    () => firstLink(),
+    () => secondLink(),
+    () => thirdLink(),
+    () => fourthLink(),
     // Add more events as needed
   ];
 
-  let sliderCardfunOne = (value) => {
-    console.log(value);
-    if (value === 0) {
-      setCardOne(true);
-    } else if (value === 1) {
-      console.log('Ello');
-      setCardOne(false);
-    }
-  };
+  // let sliderCardfunOne = (value) => {
+  //   if (value === 0) {
+  //     setCardOne(true);
+  //   } else if (value === 1) {
+  //     setCardOne(false);
+  //   }
+  // };
 
-  let sliderCardfunTwo = (value) => {
-    if (value === 1) {
-      setCardTwo(true);
-    }
+  // let sliderCardfunTwo = (value) => {
+  //   if (value === 1) {
+  //     setCardTwo(true);
+  //   }
 
-    if (value === 2) {
-      setCardTwo(false);
-    }
-  };
-  let sliderCardfunThree = (value) => {
-    if (value === 2) {
-      setCardThere(true);
-    } else if (value === 3) {
-      setCardThere(false);
-    }
-  };
-  let sliderCardfunFour = () => {};
+  //   if (value === 2) {
+  //     setCardTwo(false);
+  //   }
+  // };
+  // let sliderCardfunThree = (value) => {
+  //   if (value === 2) {
+  //     setCardThere(true);
+  //   } else if (value === 3) {
+  //     setCardThere(false);
+  //   }
+  // };
 
-  const handlePrevClick = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      const currentEvent = eventsToTrigger[currentIndex - 1];
+  // let sliderCardfunFour = () => {};
+
+  const eventsToTriggers = [
+    () => console.log('Event 1'),
+    () => console.log('Event 2'),
+    () => console.log('Event 3'),
+    // Add more events as needed
+  ];
+
+  const [currentIndexs, setCurrentIndexs] = useState(0);
+
+  const handleNextClicks = () => {
+    if (currentIndex < eventsToTriggers.length) {
+      const currentEvent = eventsToTriggers[currentIndex];
       currentEvent();
+      setCurrentIndexs(currentIndexs + 1);
+    } else {
+      console.log('All events have been triggered.');
     }
-    return;
   };
 
   const handleNextClick = () => {
@@ -75,7 +84,6 @@ const SevenSec = () => {
       currentEvent();
       setCurrentIndex(currentIndex + 1);
     }
-
     return;
   };
 
@@ -84,19 +92,34 @@ const SevenSec = () => {
     setSlink(dnone);
     setTlink(dnone);
     setGlink(dnone);
+    setFimg(point);
+    setSimg(point);
+    setTimg(point);
+    setGimg(point);
+    setCurrentIndex(1);
   };
   const secondLink = () => {
     setFlink(dnone);
     setSlink(block);
     setTlink(dnone);
-    setFimg(pointOut);
     setGlink(dnone);
+
+    setFimg(pointOut);
+    setSimg(point);
+    setTimg(point);
+    setGimg(point);
+    setCurrentIndex(2);
   };
   const thirdLink = () => {
     setTlink(block);
     setSlink(dnone);
     setFlink(dnone);
     setGlink(dnone);
+    setTimg(pointOut);
+    setSimg(pointOut);
+    setTimg(point);
+    setGimg(point);
+    setCurrentIndex(3);
   };
 
   const fourthLink = () => {
@@ -104,18 +127,23 @@ const SevenSec = () => {
     setSlink(dnone);
     setFlink(dnone);
     setGlink(block);
+    setTimg(pointOut);
+    setSimg(pointOut);
+    setFimg(pointOut);
+    setGimg(pointOut);
+    setCurrentIndex(4);
   };
 
-  const mystyle = {
-    marginLeft: '-900px',
-  };
-  const mystyleprev = {
-    marginLeft: '',
-  };
+  // const mystyle = {
+  //   marginLeft: '-900px',
+  // };
+  // const mystyleprev = {
+  //   marginLeft: '',
+  // };
 
   return (
     <>
-      <div className="mt-[150px]  py-[90px] ">
+      <div className="mt-[150px]  py-[90px]">
         <p className="text-left font-sans mobile pl-5 text-[20px]  leading-[20px] font-[400] ">
           Work Process
         </p>
@@ -128,7 +156,7 @@ const SevenSec = () => {
 
         <div className="w-[90%] wonderWrapper mx-auto flex justify-between items-center gap-5">
           <div className="left_fourth relative h-[300px]  w-[50%]">
-            <div className="w-[95%] bg-white border-[1px]  transition-all duration-500 top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto ">
+            <div className="w-[95%] bg-white border-[1px]  transition-all duration-1000 top-0 left-0  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto ">
               <img
                 className="w-5 h-5"
                 src="images/vlogoicon1.png"
@@ -142,8 +170,8 @@ const SevenSec = () => {
             </div>
 
             <div
-              style={cardThree ? mystyle : mystyleprev}
-              className="w-[95%] bg-white border-[1px] transition-all duration-1000 ml-3 mt-3  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
+              style={{ marginLeft: tImg }}
+              className="w-[95%] bg-white border-[1px] transition-all  duration-1000  ml-3 mt-3  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
                 className="w-5 h-4"
@@ -158,8 +186,8 @@ const SevenSec = () => {
             </div>
 
             <div
-              style={cardTwo ? mystyle : mystyleprev}
-              className="w-[95%] bg-white border-[1px] transition-all duration-1000  mt-6 ml-6  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
+              style={{ marginLeft: sImg }}
+              className=" w-[95%]  bg-white border-[1px] transition-all duration-1000  mt-6 ml-6  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
                 className="w-5 h-4"
@@ -174,7 +202,7 @@ const SevenSec = () => {
             </div>
 
             <div
-              style={cardOne ? mystyle : mystyleprev}
+              style={{ marginLeft: fImg }}
               className="w-[95%]  border-[1px] top-3 transition-all duration-1000 bg-white  ml-9 mt-6  p-5 h-[248px] flex justify-center  flex-col rounded-2xl  absolute mx-auto "
             >
               <img
@@ -200,7 +228,7 @@ const SevenSec = () => {
                   </button>
                 </div>
                 <p className="block">
-                  <span>{currentIndex + 1} /</span> <span> 4</span>
+                  <span>{currentIndex} /</span> <span> 4</span>
                 </p>
                 <div className="learro">
                   <button
@@ -227,12 +255,12 @@ const SevenSec = () => {
             </h2>
 
             <ul className="list-none listing_link mt-[70px] cursor-pointer">
-              <li className="flex items-center  transition-all  duration-500  pb-5">
+              <li className="flex items-center  transition-all  duration-1000  pb-5">
                 <img
                   style={{ display: fLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={firstLink}
@@ -242,12 +270,12 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  transition-all  duration-500 items-center pb-5">
+              <li className="flex  transition-all  duration-1000 items-center pb-5">
                 <img
                   style={{ display: sLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px]  transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px]  transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={secondLink}
@@ -257,12 +285,12 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  transition-all  duration-500 items-center pb-5">
+              <li className="flex  transition-all  duration-1000 items-center pb-5">
                 <img
                   style={{ display: tLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={thirdLink}
@@ -272,13 +300,13 @@ const SevenSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  transition-all  duration-500 items-center pb-5">
+              <li className="flex  transition-all  duration-1000 items-center pb-5">
                 <img
                   style={{ display: gLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px] transition-all duration-500 mr-[10px] font-[400] vlogoicon h-[11.95px]"
-                />{' '}
+                  className="w-[24px] transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                />
                 <span
                   onMouseEnter={fourthLink}
                   className="text-[16px] leading-[172%] duration-1000 "
