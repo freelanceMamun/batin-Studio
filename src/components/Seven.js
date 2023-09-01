@@ -17,7 +17,7 @@ const SevenSec = () => {
 
   const [gImg, setGimg] = useState(point);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const [cardOne, setCardOne] = useState(false);
   const [cardTwo, setCardTwo] = useState(false);
@@ -58,25 +58,6 @@ const SevenSec = () => {
   // };
 
   // let sliderCardfunFour = () => {};
-
-  const eventsToTriggers = [
-    () => console.log('Event 1'),
-    () => console.log('Event 2'),
-    () => console.log('Event 3'),
-    // Add more events as needed
-  ];
-
-  const [currentIndexs, setCurrentIndexs] = useState(0);
-
-  const handleNextClicks = () => {
-    if (currentIndex < eventsToTriggers.length) {
-      const currentEvent = eventsToTriggers[currentIndex];
-      currentEvent();
-      setCurrentIndexs(currentIndexs + 1);
-    } else {
-      console.log('All events have been triggered.');
-    }
-  };
 
   const handleNextClick = () => {
     if (currentIndex < eventsToTrigger.length) {
@@ -133,6 +114,12 @@ const SevenSec = () => {
     setGimg(pointOut);
     setCurrentIndex(4);
   };
+
+  // const handlePrevious = () => {
+  //   if (currentIndex > 0) {
+  //     setCurrentIndex(currentIndex - 1);
+  //   }
+  // };
 
   // const mystyle = {
   //   marginLeft: '-900px',
@@ -220,10 +207,7 @@ const SevenSec = () => {
             <div className="absolute -bottom-10 w-full flex justify-center items-center">
               <div className="w-[220px] mt-9 flex justify-between items-center">
                 <div className="learro">
-                  <button
-                    onClick={handlePrevClick}
-                    className="cursor-pointer w-[85px] p-5"
-                  >
+                  <button className="cursor-pointer w-[85px] p-5">
                     <img src="images/Arrow.png" alt="arrow" />
                   </button>
                 </div>
@@ -233,11 +217,11 @@ const SevenSec = () => {
                 <div className="learro">
                   <button
                     onClick={handleNextClick}
-                    className="cursor-pointor transition-all duration-300 p-5 w-[85px]"
+                    className="cursor-pointor transition-all duration-1000 p-5 w-[85px]"
                   >
                     <img
                       src="images/Arrow2.png"
-                      className=" duration-300 transition-all"
+                      className=" duration-1000 transition-all"
                       alt="arrow"
                     />
                   </button>

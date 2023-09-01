@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const FourthSec = () => {
   const block = 'block';
   const dnone = 'none';
-  const point = '0%';
-  const pointOut = '-9999%';
+  const point = '';
+  const pointOut = '-999px';
 
   const [fLink, setFlink] = useState(block);
   const [sLink, setSlink] = useState(dnone);
@@ -18,14 +18,17 @@ const FourthSec = () => {
     setFlink(block);
     setSlink(dnone);
     setTlink(dnone);
+    setFimg(point);
   };
   const secondLink = () => {
+    setFimg(pointOut);
+    setSimg(point)
     setFlink(dnone);
     setSlink(block);
     setTlink(dnone);
-    setFimg(pointOut);
   };
   const thirdLink = () => {
+    setSimg(pointOut)
     setTlink(block);
     setSlink(dnone);
     setFlink(dnone);
@@ -36,30 +39,30 @@ const FourthSec = () => {
         <div className="w-[85%] forthWrap mx-auto flex justify-between gap-1">
           <div className="left_fourth relative h-[550px] w-[50%]">
             <div
-              style={{ left: fImg }}
-              className="mobile_dev absolute  top-0 w-[424px] -rotate-[4deg] h-[548px] rounded-lg"
+              style={{ marginLeft: tImg }}
+              className="mobile_dev absolute   transition-all duration-1000 top-0 w-[424px] -rotate-[4deg] h-[548px] rounded-lg"
             >
               <img
                 src="images/mobile_dev.jpg"
                 alt="mobile"
-                className="  w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
 
             <div
-              style={{ left: sImg }}
-              className="mobile_dev absolute  top-0 w-[424px] rotate-[4deg] h-[548px] rounded-lg"
+              style={{ marginLeft: sImg }}
+              className="mobile_dev absolute transition-all duration-1000  top-0 w-[424px] rotate-[4deg] h-[548px] rounded-lg"
             >
               <img
                 src="images/web_dev.jpg"
                 alt="mobile"
-                className="  w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
 
             <div
-              style={{ left: tImg }}
-              className="mobile_dev absolute  top-0 w-[424px] -rotate-[4deg] h-[548px] rounded-lg"
+              style={{ marginLeft: fImg }}
+              className="mobile_dev absolute   transition-all duration-1000  top-0 w-[424px] -rotate-[4deg] h-[548px] rounded-lg"
             >
               <img
                 src="images/branding.jpg"
@@ -93,7 +96,7 @@ const FourthSec = () => {
                 </span>
               </li>
               <hr className="h-[0px] bg-[#131519] border-[#131519] mb-5" />
-              <li className="flex  items-center pb-5">
+              <li className="flex   transition-all duration-700 items-center pb-5">
                 <img
                   style={{ display: sLink }}
                   src="images/vlogoicon.png"
