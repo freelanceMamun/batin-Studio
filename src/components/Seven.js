@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+
 const SevenSec = () => {
   const block = 'block';
   const dnone = 'none';
@@ -259,7 +263,7 @@ const SevenSec = () => {
                   style={{ display: sLink }}
                   src="images/vlogoicon1.png"
                   alt="v logo icon"
-                  className="w-[24px]  transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
+                  className="w-[24px] transition-all duration-1000 mr-[10px] font-[400] vlogoicon h-[11.95px]"
                 />{' '}
                 <span
                   onMouseEnter={secondLink}
