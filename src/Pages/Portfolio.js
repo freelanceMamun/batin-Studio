@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import searchIcon from '../components/assets/images/search_icon.svg';
-import Data from '../components/assets/projects.json';
-import rightArrow from '../components/assets/images/ArrowBendDoubleUpRight.svg';
-import Reload from '../components/assets/images/reload.svg';
-import arrow from '../components/assets/images/Line 4.svg';
+import React, { useEffect, useState } from "react";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import searchIcon from "../components/assets/images/search_icon.svg";
+import Data from "../components/assets/projects.json";
+import rightArrow from "../components/assets/images/ArrowBendDoubleUpRight.svg";
+import Reload from "../components/assets/images/reload.svg";
+import arrow from "../components/assets/images/Line 4.svg";
+import Lets from "../components/Lets";
 
 const Portfolio = () => {
   const [data, setData] = useState([]);
@@ -77,30 +78,7 @@ const Portfolio = () => {
       </section>
 
       <section className="section">
-        <div
-          className="bg-black rounded-t-full rounded-l-full mx-auto w-[340px] h-[340px]
-        sm:w-[400px] 
-        sm:h-[400px] 
-        sm:bg-gray-300
-        "
-        >
-          <div
-            className="text-[40px] text-center text-white pt-24 px-10
-          sm:text-black"
-          >
-            Let's do something cool Together
-          </div>
-
-          <div className="mr-2 mt-10">
-            <div
-              className="font-sans bg-white p-6 rounded-full flex w-max ml-auto
-            sm:hidden"
-            >
-              Let's Connect
-              <img className="ml-2" src={arrow} alt="" />
-            </div>
-          </div>
-        </div>
+        <Lets></Lets>
 
         {/* Direct SVG :V */}
         {/* <img className="mx-auto" src={Frame361} alt="" /> */}
