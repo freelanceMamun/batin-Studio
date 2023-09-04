@@ -9,6 +9,8 @@ import SixSec from './SixSec';
 import SevenSec from './Seven';
 import EightSec from './EightSec';
 import NineSec from './NineSec';
+
+import Lets from '../components/Lets.js';
 const Home = () => {
   const [vidContainer, setVidContainer] = useState('80%');
 
@@ -70,7 +72,9 @@ const Home = () => {
       <SixSec />
       <SevenSec />
       <EightSec />
+      <Lets></Lets>
       <NineSec />
+      
     </>
   );
 };

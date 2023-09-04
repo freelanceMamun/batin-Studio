@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow from "../components/assets/images/Arrow.png";
+import white from "../components/assets/images/lets/lets_do_white.svg";
+import black from "../components/assets/images/lets/lets_do_black.svg";
+
 
 const Lets = () => {
+
+  const [isHover, setIsHover] = useState(false);
+  const [isHoverInner, setIsHoverInner] = useState(false);
+
   return (
-    <div>
+    <>
       <section className="section">
         <div
+        onMouseEnter={() => setIsHover(!isHover)}
+        onMouseLeave={() => setIsHover(!isHover)}
           className="bg-black rounded-t-full rounded-l-full mx-auto w-[340px] h-[340px]
 sm:w-[400px] 
 sm:h-[400px] 
@@ -25,21 +34,34 @@ duration-300
             Let's do something cool Together
           </div>
 
-          <div className="mr-2 mt-10 absolute bottom-2 right-0">
+          <div className={isHoverInner ? "mr-2 mt-10 absolute bottom-2 right-0 opacity-100 duration-300" : "mr-2 mt-10 absolute bottom-2 right-0 sm:opacity-0  duration-300"}>
             <div
-              className="font-sans bg-white p-6 rounded-full flex w-max ml-auto
-sm:hidden"
+              className="font-sans bg-white p-6 rounded-full flex w-max ml-auto"
             >
-              Let's Connect
-              <img className="ml-2" src={arrow} alt="" />
+              <p className="text-black">Let's Connect</p>
+              <img className="ml-2 rotate-180 my-auto" src={arrow} alt="" />
             </div>
           </div>
+
+          <div onMouseEnter={()=>setIsHoverInner(!isHoverInner)}
+            onMouseLeave={() => setIsHoverInner(!isHoverInner)} className={isHover ? "absolute right-2 bottom-2 hidden sm:block opacity-100 duration-300" : "absolute right-2 bottom-2 hidden sm:block opacity-0 duration-300"}>
+            <div
+              className={isHoverInner ? "font-sans bg-white p-10 rounded-full flex w-max ml-auto opacity-0 duration-300" : "font-sans bg-white p-10 rounded-full flex w-max ml-auto opacity-100 duration-300"}
+            >
+              <p className="text-black text-center">Let's<br />Connect</p>
+              
+            </div>
+
+          </div>
+
+          
         </div>
 
-        {/* Direct SVG :V */}
-        {/* <img className="mx-auto" src={Frame361} alt="" /> */}
+        
       </section>
-    </div>
+
+      
+    </>
   );
 };
 

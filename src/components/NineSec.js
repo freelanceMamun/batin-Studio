@@ -1,13 +1,6 @@
 const NineSec = () => {
   return (
     <>
-      <div className="flex w-full justify-center py-[100px] items-center">
-        <div className="w-[500px] circleBottom p-6 flex justify-center items-center  hover:bg-black hover:text-white h-[500px] rounded-bl-full hover:cursor-pointer  rounded-tr-full rounded-br-md rounded-tl-full bg-slate-200 relative">
-          <h4 className="text-[60px] text-center cursor-pointer hover:bg-black hover:text-white leading-[70px]">
-            Let’s do something cool Together
-          </h4>
-        </div>
-      </div>
 
       <footer className="mt-40 w-[90%] pb-5 h-[147px] mx-auto flex justify-between flex-col px-6 rounded-tl-[40px] rounded-tr-[40px] bg-black">
         <div className=" w-[90%] h-[147px] footer mx-auto flex justify-between px-6 rounded-tl-[40px] rounded-tr-[40px] bg-black">

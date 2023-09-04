@@ -40,7 +40,7 @@ const Portfolio = () => {
           >
             <button className="my-btn">All</button>
             <button className="my-btn">UI/UX Design</button>
-            <button className="my-btn">Website</button>
+              <button className="my-btn">Website</button>
             <button className="my-btn hidden md:block">Apps</button>
             <button className="my-btn hidden md:block">Branding</button>
           </div>

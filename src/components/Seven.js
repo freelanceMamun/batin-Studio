@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Swiper from 'swiper';
+
 // import Swiper styles
-import 'swiper/css';
+
 
 const SevenSec = () => {
   const block = 'block';

@@ -18,17 +18,18 @@ const About = () => {
           <div
             className="flex justify-between
           lg:flex-col
+          lg:justify-start
           lg:w-[40%]"
           >
-            <div className="my-title sm:text-left sm:my-auto">
+            <div className="small-device-heading sm:md-device-heading lg:lg-device-heading">
               We are Batin Studio
             </div>
             <div className="hidden sm:block">
-              <img src={Logo} alt="" />
+              <img className="lg:w-[350px]" src={Logo} alt="" />
             </div>
           </div>
           <div
-            className="my-paragraph text-center sm:text-left
+            className="small-device-paragraph sm:md-device-paragraph
           lg:w-[60%]"
           >
             We are a digital product design and development agency. In our team,
@@ -45,12 +46,12 @@ const About = () => {
       </section>
 
       <section className="section lg:flex lg:flex-row-reverse">
-        <div className="lg:w-[60%]">
-          <div className="my-title lg:text-left">
+        <div className="lg:w-[50%]">
+          <div className="small-device-heading sm:md-device-heading lg:lg-device-heading">
             We believe in improving life's
           </div>
 
-          <div className="my-paragraph text-center lg:text-left">
+          <div className="small-device-paragraph sm:md-device-paragraph">
             <img className="wrap-image" src={contactUs} alt="" />
             We give away 5% of our revenue to charity for helping people,
             planting trees, building a sustainable future, or most importantly
@@ -58,8 +59,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-6 lg:w-[40%]">
-          <img className="mx-auto lg:mx-0" src={frame365} alt="" />
+        <div className="mt-6 lg:w-[50%]">
+          <img className="mx-auto lg:mx-0 lg:w-[85%]" src={frame365} alt="" />
         </div>
       </section>
 

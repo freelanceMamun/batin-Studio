@@ -20,7 +20,7 @@ const Article = () => {
       <section className="md:w-[700px] lg:w-[700px] mx-auto">
         <section className="section">
           <div>
-            <p className="my-title text-start">
+            <p className="small-device-heading sm:md-device-heading lg:lg-device-heading text-left">
               Why every professionals needs a website?
             </p>
           </div>
@@ -80,41 +80,58 @@ const Article = () => {
 
         <section className="font-sans text-lg mt-10 p-2">
           <div>
-            <p>
+            <p className="small-device-paragraph text-left">
               In today's digital age, it is more important than ever for
               professionals to have a website. It can help you to increase your
               online presence, generate leads, build trust and credibility,
               increase sales, provide customer service, and reach a global
               audience. A website can help you to:
             </p>
-            <p className="my-h-title">1. Increase your online presence</p>A
+            <p className="my-h-title">1. Increase your online presence</p>
+            <p className="small-device-paragraph text-left">
+              A
             website is your online home, and it is the first place that
             potential clients and customers will go to learn more about you and
             your business. A well-designed website can help you to stand out
             from the competition and make a positive first impression.
-            <p className="my-h-title">2. Generate leads</p>A well-designed
+            </p>
+            <p className="my-h-title">2. Generate leads</p>
+            <p className="small-device-paragraph text-left">
+              A well-designed
             website can be a powerful lead generation tool. By providing clear
             and concise information about your services, you can encourage
             visitors to contact you to learn more. You can also use your website
             to collect email addresses and other contact information from
             potential clients.
-            <p className="my-h-title">3. Build trust and credibility</p>A
+            </p>
+            <p className="my-h-title">3. Build trust and credibility</p>
+            <p className="small-device-paragraph text-left">
+              A
             professional website can help to build trust and credibility with
             potential clients and customers. By providing accurate and
             up-to-date information about your business, you can show that you
             are a legitimate and reputable company.
-            <p className="my-h-title">4. Increase sales</p>A website can help
+            </p>
+            <p className="my-h-title">4. Increase sales</p>
+            <p className="small-device-paragraph text-left">
+              A website can help
             you to increase sales by making it easy for potential clients and
             customers to purchase your products or services. By providing clear
             and concise information about your products or services, and by
             making it easy to place an order, you can increase the likelihood of
             a sale.
-            <p className="my-h-title">5. Provide customer service</p>A website
+            </p>
+            <p className="my-h-title">5. Provide customer service</p>
+            <p className="small-device-paragraph text-left">
+              A website
             can be a great way to provide customer service to your clients and
             customers. You can use your website to answer frequently asked
             questions, provide support documentation, and track customer
             feedback.
-            <p className="my-h-title">6. Reach a global audience</p>A website
+            </p>
+            <p className="my-h-title">6. Reach a global audience</p>
+            <p className="small-device-paragraph text-left">
+              A website
             can help you to reach a global audience. By making your website
             available in multiple languages, you can reach people all over the
             world. If you are a professional who does not have a website, I
@@ -123,6 +140,7 @@ const Article = () => {
             your online presence, generate leads, build trust and credibility,
             increase sales, provide customer service, and reach a global
             audience.
+            </p>
           </div>
         </section>
 

@@ -18,12 +18,12 @@ const CaseStudy = () => {
     <>
       <Nav></Nav>
 
-      <section className="section">
+      <section className="section"> 
         <section>
           <div className="md:flex">
             <div className="md:w-1/2 pr-4">
               <div className="font-sans text-gray-500">Case Study</div>
-              <div className="my-title text-left text-[40px] font-thin">
+              <div className="small-device-heading sm:md-device-heading lg:lg-device-heading">
                 Spicyy - ecommerce food store
               </div>
 
@@ -47,7 +47,7 @@ const CaseStudy = () => {
 
             <div className="mt-10 md:w-1/2 md:mt-0">
               <div className="font-sans text-gray-500">About the project</div>
-              <div className="my-title text-left text-[40px] font-thin">
+              <div className="small-device-paragraph sm:md-device-paragraph">
                 Spicyy is a Local restaurant and also have food delivery
                 services. They can make delicious food and deliver it directly
                 to their customers with a phone call. Now, it’s time to step up.
@@ -75,13 +75,13 @@ const CaseStudy = () => {
 
           <div className="md:flex md:justify-between ">
             <div className="md:w-[40%]">
-              <h1 className="my-title text-left mt-10 font-thin">
+              <h1 className="small-device-heading sm:md-device-heading lg:lg-device-heading mt-10">
                 Product Challenges
               </h1>
             </div>
 
             <div className="md:w-[60%] md:mt-10">
-              <ul className="list-disc">
+              <ul className="list-disc small-device-paragraph sm:md-device-paragraph text-left">
                 <li>
                   It’s hard to give the feel and taste of food through a website
                   that lives in a digital device.
@@ -105,12 +105,12 @@ const CaseStudy = () => {
         <section className="mt-24 md:flex md:flex-row-reverse">
           <div className="md:w-[60%] md:mt-16">
             <div className="">
-              <h1 className="my-title text-left mt-10 font-thin">
+              <h1 className="small-device-heading sm:md-device-heading lg:lg-device-heading text-left">
                 Our Solutions
               </h1>
             </div>
             <div className="">
-              <ul className="list-disc">
+              <ul className="small-device-paragraph sm:md-device-paragraph text-left">
                 <li>
                   Make the website and food vibrant and colorful so that
                   customers can visually feel it.
@@ -128,9 +128,9 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        <section className="mt-24 md:flex">
-          <img className="mx-auto" src={fourthImage} alt="" />
-          <img className="mx-auto md:mt-10" src={fifthImage} alt="" />
+        <section className="mt-24 md:flex md:gap-6">
+          <img className="mx-auto md:ml-auto md:w-[536px]" src={fourthImage} alt="" />
+          <img className="mx-auto md:mr-auto md:w-[536px] md:mt-10" src={fifthImage} alt="" />
         </section>
 
         <section className="mt-24">
@@ -151,9 +151,9 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        <section className="mt-24 md:flex">
-          <img className="mx-auto" src={seventhImage} alt="" />
-          <img className="mx-auto mt-10 md:mt-20" src={eightImage} alt="" />
+        <section className="mt-24 md:flex md:gap-6">
+          <img className="mx-auto md:ml-auto md:w-[536px]" src={seventhImage} alt="" />
+          <img className="mx-auto md:mr-auto md:w-[536px] mt-10 md:mt-20" src={eightImage} alt="" />
         </section>
 
         <section className="mt-24">

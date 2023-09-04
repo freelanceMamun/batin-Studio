@@ -6,10 +6,10 @@
   background: linear-gradient(0deg, rgba(19, 21, 25, 0.9), rgba(19, 21, 25, 0.9)), #FFFFFF;
 }
 
-@layer base{
-  textarea::-webkit-scrollbar{
+@layer base {
+  textarea::-webkit-scrollbar {
     display: none;
-}
+  }
 }
 
 /* My Classes */
@@ -23,6 +23,60 @@
 
   }
 
+  .small-device-heading {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(19, 21, 25, 1);
+    margin-bottom: 32px;
+
+  }
+
+  .md-device-heading {
+    font-size: 56px;
+    line-height: 56px;
+    font-weight: 400;
+    text-align: start;
+    color: rgba(19, 21, 25, 1);
+
+  }
+
+  .lg-device-heading {
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 400;
+    text-align: start;
+    color: rgba(19, 21, 25, 1);
+  }
+
+  .small-device-paragraph {
+    font-size: 16px;
+    line-height: 27.52px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: rgba(19, 21, 25, 0.8);
+  }
+
+  .md-device-paragraph {
+    font-size: 28px;
+    line-height: 50.4px;
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Inter', sans-serif;
+    color: rgba(19, 21, 25, 0.8);
+  }
+
+  .small-device-paragraph {
+    font-size: 16px;
+    line-height: 27.52px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: rgba(19, 21, 25, 0.8);
+  }
+
   .my-h-title {
 
     font-size: 24px;
@@ -32,12 +86,29 @@
     margin-top: 1.5em;
 
   }
+  .my-font{
+    font-family: 'Inter',sans-serif;
+  }
+
+  .nav-sm-font{
+    font-size: 14px;
+  }
+  .nav-md-font{
+    font-size: 16px;
+  }
+  .nav-lg-font{
+    font-size: 48px;
+    font-family: 'NewYork';
+  }
+  .background{
+    background-color: rgba(255, 255, 255, 1);
+  }
 
   .my-paragraph {
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     line-height: 27.50px;
-    
+
   }
 
   .wrap-image {
@@ -50,9 +121,9 @@
   .section {
     @apply mt-28 mx-4 lg:mx-28
   }
-  
+
   .my-btn {
-    @apply px-6 py-3 active:bg-black active:text-white text-gray-500 active:rounded-full border border-gray-700 rounded-full
+    @apply hover:bg-gray-200 duration-300 px-6 py-3 active:bg-black active:text-white text-gray-500 active:rounded-full border border-gray-700 rounded-full
   }
 }
 
@@ -486,7 +557,8 @@ body {
     line-height: 50px;
   }
 
-  .footer, footer {
+  .footer,
+  footer {
     flex-direction: column;
     height: 200px !important;
     width: 95%;
